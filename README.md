@@ -1,2 +1,2 @@
 # L3SoftwareDev
-Files used in my software dev course
+This repo is for my calculator project for my L3 Software Dev course
