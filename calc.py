@@ -1,3 +1,5 @@
+from tkinter import *
+
 # Program to run inside while loop
 run = True
 
