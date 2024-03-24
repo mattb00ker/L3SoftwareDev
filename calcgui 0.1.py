@@ -13,7 +13,7 @@ root = Tk()
 # root window title and dimension
 root.title("Calculator!")
 # Set geometry (widthxheight)
-root.geometry('375x200')
+root.geometry('375x135')
 
 #button click actions
 
@@ -52,15 +52,15 @@ lblans = Label(root, text = "Answer will be here")
 
 
 #set up calculator buttons and text entery boxes, the strucutre
-lbl.grid()
-lbl1.grid()
-txt_1.grid(column =0, row =3)
-txt_2.grid(column =0, row =4)
+lbl.grid(column=0, row=0)
+lbl1.grid(column=0, row=1)
+txt_1.grid(column =0, row =2)
+txt_2.grid(column =0, row =3)
 btn_add.grid(column=1, row=0)
 btn_sub.grid(column=1, row=1)
 btn_mul.grid(column=1, row=2)
 btn_div.grid(column=1, row=3)
-lblans.grid(column=0, row=5)
+lblans.grid(column=0, row=4)
 
  
 
