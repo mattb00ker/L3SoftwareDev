@@ -3,6 +3,15 @@
 #additioanlly from last time M+, MRC, and MC buttons to be added
 #byrequest
 
+
+# Things to do
+# Remove braces from sum
+# Colourise the background
+# Add an LCD looking screen
+# Change font for sum and answer
+
+
+
 #import modules
 import os
 from tkinter import *
