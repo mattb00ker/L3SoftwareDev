@@ -3,26 +3,19 @@
 #additioanlly from last time M+, MRC, and MC buttons to be added
 #byrequest
 
-
-# Things to do
-# Remove braces from sum
-# Colourise the background
-# Add an LCD looking screen
-# Change font for sum and answer
-
-
-
 #import modules
 import os
 from tkinter import *
  
 #create root window
 root = Tk()
+
+#root.configure(background='white')
  
 #root window title and dimension
 root.title("Calculator!")
 #set geometry (widthxheight)
-root.geometry('322x200')
+root.geometry('280x180')
 
 #set up variables for application
 number_selection = 1
@@ -41,7 +34,7 @@ def add():
     operator_selection = "+"
     global number_selection
     number_selection = 2
-    sumtext = str(number_1) + " ", operator_selection
+    sumtext = str(number_1) + " " + operator_selection
     lblsum.configure(text= sumtext)
     print('add things')
 def subtract():
@@ -51,7 +44,7 @@ def subtract():
     operator_selection = "-"
     global number_selection
     number_selection = 2
-    sumtext = str(number_1) + " ", operator_selection
+    sumtext = str(number_1) + " " + operator_selection
     lblsum.configure(text= sumtext)
     print('subtract things!')
 def multiply():
@@ -61,7 +54,7 @@ def multiply():
     operator_selection = "*"
     global number_selection
     number_selection = 2
-    sumtext = str(number_1) + " ", operator_selection
+    sumtext = str(number_1) + " " + operator_selection
     lblsum.configure(text= sumtext)
     print('multiply things')
 def divide():
@@ -71,7 +64,7 @@ def divide():
     operator_selection = "/"
     global number_selection
     number_selection = 2
-    sumtext = str(number_1) + " ", operator_selection
+    sumtext = str(number_1) + " " + operator_selection
     lblsum.configure(text= sumtext)
     print('divide things!')
 def ac():
@@ -103,7 +96,7 @@ def equals():
         print("adding!")
         global answer
         answer = int(number_1) + int(number_2)
-        sumtext = number_1 + ' ' + operator_selection + ' ' + number_2 + ' ' + '='
+        sumtext = number_1 + operator_selection + number_2 + '='
         lblsum.configure(text= sumtext)
         lblans.configure(text = answer)
         print(answer)
@@ -111,7 +104,7 @@ def equals():
         print("subtracting!")
         #global answer
         answer = int(number_1) - int(number_2)
-        sumtext = number_1 + ' ' + operator_selection + ' ' + number_2 + ' ' + '='
+        sumtext = number_1 + operator_selection + number_2 + '='
         lblsum.configure(text= sumtext)
         lblans.configure(text = answer)
         print(answer)
@@ -119,7 +112,7 @@ def equals():
         print("multiplying!")
         #global answer
         answer = int(number_1) * int(number_2)
-        sumtext = number_1 + ' ' + operator_selection + ' ' + number_2 + ' ' + '='
+        sumtext = number_1 + operator_selection + number_2 + '='
         lblsum.configure(text= sumtext)
         lblans.configure(text = answer)
         print(answer)
@@ -127,7 +120,7 @@ def equals():
         print("dividing!")
         #global answer
         answer = int(number_1) / int(number_2)
-        sumtext = number_1 + ' ' + operator_selection + ' ' + number_2 + ' ' + '='
+        sumtext = number_1 + operator_selection + number_2 + '='
         lblsum.configure(text= sumtext)
         lblans.configure(text = answer)
         print(answer)
@@ -156,75 +149,137 @@ def memrecall():
         with open('memory.txt', 'r') as file:
             entery_2 = file.read().rstrip()
             print(entery_2)
+            if operator_selection == '':
+                lblsum.configure(text="OMG what have you done! you forgot the operator!!")
+            else:
+                equals()
     else:
         print("entery 1 empty")
         with open('memory.txt', 'r') as file:
             entery_1 = file.read().rstrip()
+            lblsum.configure(text=entery_1)
             print(entery_1)
     print("recall the memory")
 #number button click actions
 def one():
+    global number_1
     if number_selection == 1:
         entery_1.append("1")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("1")
-
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("one")
 def two():
+    global number_1
     if number_selection == 1:
         entery_1.append("2")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("2")
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("two")
 def three():
+    global number_1
     if number_selection == 1:
         entery_1.append("3")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("3")
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("three")
 def four():
+    global number_1
     if number_selection == 1:
         entery_1.append("4")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("4")
-
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("four")
 def five():
+    global number_1
     if number_selection == 1:
         entery_1.append("5")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("5")
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("five")
 def six():
+    global number_1
     if number_selection == 1:
         entery_1.append("6")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("6")
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("six")
 def seven():
+    global number_1
     if number_selection == 1:
         entery_1.append("7")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("7")
-
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("seven")
 def eight():
+    global number_1
     if number_selection == 1:
         entery_1.append("8")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("8")
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("eight")
 def nine():
+    global number_1
     if number_selection == 1:
         entery_1.append("9")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("9")
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("nine")
 def zero():
+    global number_1
     if number_selection == 1:
         entery_1.append("0")
+        number_1 = ''.join(entery_1)
+        lblsum.configure(text= number_1)
     else:
         entery_2.append("0")
+        number_2 = ''.join(entery_2)
+        finalsum = str(number_1) + operator_selection + str(number_2)
+        lblsum.configure(text= finalsum)
     print("zero")
 
 #building up the different components
