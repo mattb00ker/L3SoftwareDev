@@ -72,6 +72,25 @@ def divide():
     lblsum.configure(text= sumtext)
     print('divide things!')
 
+def ac():
+    global number_selection
+    global operator_selection
+    global entery_1
+    global entery_2
+    global number_1
+    global number_2
+    global answer
+
+    number_selection = 1
+    operator_selection = ""
+    entery_1 = []
+    entery_2 = []
+    number_1 = 0
+    number_2 = 0
+    answer = 0
+    lblsum.configure(text= "")
+    lblans.configure(text=answer)
+
 def equals():
     global number_2
     number_2 = ''.join(entery_2)
@@ -113,7 +132,6 @@ def equals():
         print(answer)
     else:
         print("no work :(")
-
 
 def memplus():
     if entery_2 == []:
@@ -240,6 +258,7 @@ btn_equals = Button(root, text = "=", fg = "red", command=equals)
 btn_mem_plus = Button(root, text = "M+", fg = "red", command=memplus)
 btn_mem_recall = Button(root, text = "MRC", fg = "red", command=memrecall)
 btn_mem_clear = Button(root, text = "MC", fg = "red", command=memclear)
+btn_ac =Button(root, text = "AC", fg = "red", command=ac)
 
 
 #set up calculator buttons, the strucutre
@@ -256,6 +275,7 @@ btn_equals.grid(column=5, row=7)
 btn_mem_plus.grid(column=5, row=4)
 btn_mem_recall.grid(column=5, row=5)
 btn_mem_clear.grid(column=5, row=6)
+btn_ac.grid(column=0 , row=7)
 
 
 #number buttons
