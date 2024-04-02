@@ -34,7 +34,7 @@ def add():
     operator_selection = "+"
     global number_selection
     number_selection = 2
-    sumtext = str(number_1) + " " + operator_selection
+    sumtext = str(number_1) + operator_selection
     lblsum.configure(text= sumtext)
     print('add things')
 def subtract():
@@ -44,7 +44,7 @@ def subtract():
     operator_selection = "-"
     global number_selection
     number_selection = 2
-    sumtext = str(number_1) + " " + operator_selection
+    sumtext = str(number_1) + operator_selection
     lblsum.configure(text= sumtext)
     print('subtract things!')
 def multiply():
@@ -54,7 +54,7 @@ def multiply():
     operator_selection = "*"
     global number_selection
     number_selection = 2
-    sumtext = str(number_1) + " " + operator_selection
+    sumtext = str(number_1) + operator_selection
     lblsum.configure(text= sumtext)
     print('multiply things')
 def divide():
@@ -64,7 +64,7 @@ def divide():
     operator_selection = "/"
     global number_selection
     number_selection = 2
-    sumtext = str(number_1) + " " + operator_selection
+    sumtext = str(number_1) + operator_selection
     lblsum.configure(text= sumtext)
     print('divide things!')
 def ac():
