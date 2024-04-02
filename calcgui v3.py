@@ -81,7 +81,7 @@ def equals():
 
     if operator_selection == "+":
         print("adding!")
-        #global answer
+        global answer
         answer = int(number_1) + int(number_2)
         sumtext = number_1 + ' ' + operator_selection + ' ' + number_2 + ' ' + '='
         lblsum.configure(text= sumtext)
@@ -133,12 +133,18 @@ def memclear():
     print("clear the memory file")
 
 def memrecall():
+    global entery_1
+    global entery_2
     if len(entery_1) != 0:
-        entery_2 = open("memory.txt", "r")
-        entery_2.read()
+        print("entery 1 not empty")
+        with open('memory.txt', 'r') as file:
+            entery_2 = file.read().rstrip()
+            print(entery_2)
     else:
-        entery_1 = open("memory.txt", "r")
-        entery_1.read()
+        print("entery 1 empty")
+        with open('memory.txt', 'r') as file:
+            entery_1 = file.read().rstrip()
+            print(entery_1)
     print("recall the memory")
 
 #number button click actions
@@ -236,7 +242,7 @@ btn_mem_recall = Button(root, text = "MRC", fg = "red", command=memrecall)
 btn_mem_clear = Button(root, text = "MC", fg = "red", command=memclear)
 
 
-#set up calculator buttons and text entery boxes, the strucutre
+#set up calculator buttons, the strucutre
 lbl.grid(column=2, row=0)
 lblsum.grid(column=2, row=1)
 lblans.grid(column=2, row=2)
