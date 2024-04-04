@@ -10,12 +10,12 @@ from tkinter import *
 #create root window
 root = Tk()
 
-#root.configure(background='white')
+#root.configure(background='yellow')
  
 #root window title and dimension
 root.title("Calculator!")
 #set geometry (widthxheight)
-root.geometry('280x180')
+root.geometry('260x180')
 
 #set up variables for application
 number_selection = 1
@@ -24,7 +24,7 @@ entery_1 = []
 entery_2 = []
 number_1 = 0
 number_2 = 0
-answer = 0
+answer = ""
 
 #function button click actions
 def add():
@@ -82,7 +82,7 @@ def ac():
     entery_2 = []
     number_1 = 0
     number_2 = 0
-    answer = 0
+    answer = ""
     lblsum.configure(text= "")
     lblans.configure(text=answer)
 def equals():
@@ -311,9 +311,9 @@ btn_ac =Button(root, text = "AC", fg = "red", command=ac)
 
 #structure of application
 #set up labels
-lbl.grid(column=2, row=0)
-lblsum.grid(column=2, row=1)
-lblans.grid(column=2, row=2)
+lbl.grid(column=0, row=0, columnspan=5)
+lblsum.grid(column=0, row=1, columnspan=5)
+lblans.grid(column=0, row=2, columnspan=5)
 #function buttons
 btn_add.grid(column=4, row=4)
 btn_sub.grid(column=4, row=5)
